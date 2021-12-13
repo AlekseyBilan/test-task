@@ -1,0 +1,21 @@
+.chart-wrap {
+    margin: 20px 10px 10px;
+    
+    .chart-wrap-helper-container {
+        position: relative;
+        padding: 15px;
+        margin: 15px;
+        border: 3px solid #333;
+    }
+
+    .title {
+        text-decoration: none;
+        display: inline-block;
+        background-color: white;
+        position: relative;
+        top: -42px;
+        padding: 10px 20px;
+        margin: 0;
+        color: #333;
+    }
+}
