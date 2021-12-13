@@ -15,26 +15,26 @@ const AddEmployees = (props:any) => {
       <Form ref={form}
         onSubmit={formSubmit}
         render={(formRenderProps: FormRenderProps) => (
-          <FormElement style={{maxWidth: 650}}>
+          <FormElement style={{maxWidth: 650, padding: '20px'}}>
             <fieldset className={'k-form-fieldset'}>
               <legend className={'k-form-legend'}>Please fill in the fields:</legend>
-              <div className="mb-3">
+              <div className='mb-3'>
                 <Field name={'name'} component={Input} label={'Name'} />
               </div>
-              <div className="mb-3">
+              <div className='mb-3'>
                 <Field name={'jobTitle'} component={Input} label={'Job title'} />
               </div>
-              <div className="mb-3">
-                <Field name={"tenure"} component={Input} label={"Tenure"} />
+              <div className='mb-3'>
+                <Field name={'tenure'} component={Input} label={'Tenure'} />
               </div>
-              <div className="mb-3">
-                <Field name={"gender"} component={Input} label={"Gender"}/>
+              <div className='mb-3'>
+                <Field name={'gender'} component={Input} label={'Gender'}/>
               </div>
             </fieldset>
-            <div className="k-form-buttons">
+            <div className='k-form-buttons'>
               <button
                 type={'submit'}
-                className="k-button"
+                className='k-button'
                 disabled={!formRenderProps.allowSubmit}
                         >
                 Add employee
