@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Popup } from "@progress/kendo-react-popup";
+import ChartWrap from "../ChartWrap/ChartWrap";
+import AddEmployees from "../AddEmployees/AddEmployees";
+import GridWrap from "../Grid/GridWrap";
 import {
   Chart,
   ChartSeries,
@@ -7,9 +10,6 @@ import {
   ChartLegend,
   ChartTooltip,
 } from "@progress/kendo-react-charts";
-import ChartWrap from "../ChartWrap/ChartWrap";
-import AddEmployees from "../AddEmployees/AddEmployees";
-import GridWrap from "../Grid/GridWrap";
 import "hammerjs";
 import { Employeer, Employees } from "./types";
 import "@progress/kendo-theme-material/dist/all.css";
@@ -65,9 +65,6 @@ function App() {
 
   const btnRef = React.useRef<HTMLButtonElement>(null);
   const [show, setShow] = React.useState(false);
-  useEffect(() => {
-    setShow(false);
-  }, []);
   const onClick = () => {
     setShow(!show);
   };
@@ -76,7 +73,11 @@ function App() {
     <div className="App">
       <h1 className="title">Corporate Empoloyees</h1>
       <div className="btn-wrapper">
-        <button ref={btnRef} onClick={onClick} className="btn btn-add-employees">
+        <button
+          ref={btnRef}
+          onClick={onClick}
+          className="btn btn-add-employees"
+        >
           Add Employee
         </button>
       </div>
@@ -88,7 +89,7 @@ function App() {
       <GridWrap result={result} />
 
       <div className="charts-wrapper">
-        <ChartWrap title={"Employees by Job Title"}>
+        <ChartWrap title={"Employees by Job Title"} result={result}>
           <Chart>
             <ChartLegend position="bottom" />
             <ChartSeries>
@@ -102,7 +103,7 @@ function App() {
             </ChartSeries>
           </Chart>
         </ChartWrap>
-        <ChartWrap title={"Employees by Gender"}>
+        <ChartWrap title={"Employees by Gender"} result={result}>
           <Chart>
             <ChartSeries>
               <ChartSeriesItem
